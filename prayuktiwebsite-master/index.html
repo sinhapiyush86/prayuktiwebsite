@@ -3,319 +3,468 @@
 <!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
 
-<head>
+    <head>
 
-    <!--- basic page needs
+        <!--- basic page needs
 ================================================== -->
 
 
-    <meta charset="utf-8">
-    <title>Prayukti 2018</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+        <meta charset="utf-8">
+        <title>Prayukti 2018</title>
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-    <!-- mobile specific metas
+        <!-- mobile specific metas
 ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- CSS
+        <!-- CSS
 ================================================== -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/vendor.css">
 
-    <!-- script
+        <!-- script
 ================================================== -->
-    <script src="js/modernizr.js"></script>
+        <script src="js/modernizr.js"></script>
 
-    <!-- favicons
+        <!-- favicons
 ================================================== -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,700,700i,900" rel="stylesheet">
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,700,700i,900" rel="stylesheet">
 
 
 
-</head>
+    </head>
 
 
 
-<body id="top">
+    <body id="top">
 
-    <!-- header ================================================== -->
-    <header>
-        <div class="row">
-            <div class="sublogo">
-                
+        <!-- header ================================================== -->
+        <header>
+            <div class="row">
+                <div class="sublogo">
+
+                </div>
+
+                <div class="social-links">
+                    <ul>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Sign Up</a></li>
+                        <li><a href="https://www.facebook.com/prayuktihith/"><i class="fa fa-facebook"></i></a></li>
+                    </ul>
+                </div>
             </div>
+        </header>
 
-            <div class="social-links">
-                <ul>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Sign Up</a></li>
-                    <li><a href="https://www.facebook.com/prayuktihith/"><i class="fa fa-facebook"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+        <!-- home ================================================== -->
+        <section id="home" class="home-slides">
+            <section id="home" class="home-particles" style="opacity: 0.85">
 
-    <!-- home ================================================== -->
-    <section id="home" class="home-slides">
-        <section id="home" class="home-particles" style="opacity: 0.88">
+                <div class="shadow-overlay"></div>
 
-            <div class="shadow-overlay"></div>
+                <div class="content-wrap-table">
 
-            <div class="content-wrap-table">
+                    <div class="main-content-tablecell">
 
-                <div class="main-content-tablecell">
-
-                    <div class="row">
-                        <div class="col-twelve">
+                        <div class="row">
+                            <div class="col-twelve">
 
 
-                        </div>
-                        <!-- /twelve -->
-                        <div id="counter" class="hidden-sm">
-                            <div class="half">
-                                <span id="days"> </span>
-                                <span id="hours"></span>
                             </div>
-                            <div class="half">
-                                <span id="minutes"></span>
-                                <span id="seconds"></span>
+                            <!-- /twelve -->
+                            <div id="counter" class="hidden-sm">
+                                <div class="half">
+                                    <span id="days"> </span>
+                                    <span id="hours"></span>
+                                </div>
+                                <div class="half">
+                                    <span id="minutes"></span>
+                                    <span id="seconds"></span>
+                                </div>
                             </div>
+
+                            <script>
+                                // Set the date we're counting down to
+                                var countDownDate = new Date("April 9, 2018 00:00:00").getTime();
+
+                                // Update the count down every 1 second
+                                var x = setInterval(function() {
+
+                                    // Get todays date and time
+                                    var now = new Date().getTime();
+
+                                    // Find the distance between now an the count down date
+                                    var distance = countDownDate - now;
+
+                                    // Time calculations for days, hours, minutes and seconds
+                                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                                    // Output the result in an element with id="demo"
+                                    document.getElementById("days").innerHTML = days + "<sup >&nbsp&nbsp&nbsp&nbspdays</sup>";
+                                    document.getElementById("hours").innerHTML = hours + "<sup >&nbsp&nbsp&nbsp&nbsphours</sup>";
+                                    document.getElementById("minutes").innerHTML = minutes + "<sup >&nbsp&nbsp&nbsp&nbspminutes</sup>";
+                                    document.getElementById("seconds").innerHTML = seconds + "<sup >&nbsp&nbsp&nbsp&nbspsecs</sup>";
+
+                                    // If the count down is over, write some text 
+                                    if (distance < 0) {
+                                        clearInterval(x);
+                                        document.getElementById("counter").innerHTML = "EXPIRED";
+                                    }
+                                }, 1000);
+                            </script>
+
+
+
+                            <div class="heading">
+                                <img src="images/logo.png" class="logo">
+                                <h1 style="font-family: Rockwell Extra Bold, Rockwell Bold, monospace;">Prayukti<br><span  class="num" style="">2k18</span></h1>
+
+
+                                <p>Haldia Institute of Technology</p>
+                            </div>
+
+
+
+                            <div class="scroll-icon">
+
+                                <p class="scroll-text">Scroll down</p>
+                                <a href="#info" class="smoothscroll">
+                                    <div class="mouse"></div>
+                                </a>
+                                <div class="end-top"></div>
+
+                            </div>
+                            <!-- /scroll-icon -->
+
                         </div>
-
-                        <script>
-                            // Set the date we're counting down to
-                            var countDownDate = new Date("April 9, 2018 00:00:00").getTime();
-
-                            // Update the count down every 1 second
-                            var x = setInterval(function() {
-
-                                // Get todays date and time
-                                var now = new Date().getTime();
-
-                                // Find the distance between now an the count down date
-                                var distance = countDownDate - now;
-
-                                // Time calculations for days, hours, minutes and seconds
-                                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                                // Output the result in an element with id="demo"
-                                document.getElementById("days").innerHTML = days + "<sup >&nbsp&nbsp&nbsp&nbspdays</sup>";
-                                document.getElementById("hours").innerHTML = hours + "<sup >&nbsp&nbsp&nbsp&nbsphours</sup>";
-                                document.getElementById("minutes").innerHTML = minutes + "<sup >&nbsp&nbsp&nbsp&nbspminutes</sup>";
-                                document.getElementById("seconds").innerHTML = seconds + "<sup >&nbsp&nbsp&nbsp&nbspsecs</sup>";
-
-                                // If the count down is over, write some text 
-                                if (distance < 0) {
-                                    clearInterval(x);
-                                    document.getElementById("counter").innerHTML = "EXPIRED";
-                                }
-                            }, 1000);
-                        </script>
-
-
-
-                        <div class="heading">
-                            <img src="images/logo.png" class="logo">
-                           <h1 style="font-family: Rockwell Extra Bold, Rockwell Bold, monospace;">Prayukti<br><span  class="num" style="">2018</span></h1>
-                           
-
-                            <p>Haldia Institute of Technology</p>
-                        </div>
-
-
-
-                        <div class="scroll-icon">
-
-                            <p class="scroll-text">Scroll down</p>
-                            <a href="#info" class="smoothscroll">
-                                <div class="mouse"></div>
-                            </a>
-                            <div class="end-top"></div>
-
-                        </div>
-                        <!-- /scroll-icon -->
+                        <!-- /row -->
 
                     </div>
-                    <!-- /row -->
+                    <!-- /main-content -->
 
                 </div>
-                <!-- /main-content -->
+                <!-- /content-wrap -->
 
-            </div>
-            <!-- /content-wrap -->
-
+            </section>
+            <!-- /home -->
         </section>
-        <!-- /home -->
-    </section>
 
 
-    <!-- info
+
+
+
+        <!-- info
 ================================================== -->
-    <section id="info">
+        <section id="info">
 
-        <div class="info-overlay"></div>
+            <div class="info-overlay"></div>
 
-        <div class="row">
-            i
-            <div class="col-twelve tabs-wrap">
-                <h1 style="
-                           font-family: 'nexa';
-                           font-size:40px;
-                           letter-spacing: 2px;
-                           color:#242424;"><u style="margin-top:10px;">About Us</u></h1><br><br>
-                <div class="col-eight" style="margin-left: -10%">
+            <div class="row">   		
+                <div class="col-twelve tabs-wrap">
+                    <h1 align="center"><u>About Us</u></h1><br><br>
+                    <div class="col-eight" style="">
 
-                    <h3 style="
-                               font-family: 'nexa';
-                               font-size:24px;
-                               letter-spacing: 1px;
-                               color:#242424;
+                        <h3>Welcome to Haldia Institute of Technology</h3><br>
 
-                               ">Welcome to Haldia Institute of Technology</h3>
+                        <p  class="lead large" align="left">Haldia Institute of Technology began its journey in the year 1996. It is the first private and accredited academic institution catering technical education in West Bengal. The Institute is situated at Haldia - an industrial hub in Eastern India. Since inception, Haldia Institute of Technology is dedicated to the objectives of creating highly trained professional manpower in various disciplines of Engineering, Technology and Social Science. The Institute is also dedicated to the contribution of higher scientific research in Technology as well as in Applied Science and Social Science.Haldia Institute of Technology began its journey in the year 1996. It is the first private and accredited academic institution catering technical education in West Bengal. The Institute is situated at Haldia - an industrial hub in Eastern India. Since inception, Haldia Institute of Technology is dedicated to the objectives of creating highly trained professional manpower in various disciplines of Engineering,</p><br><br></div>
+                    <h3 style="">Prayukti 2k18</h3>
 
-                    <p align="left" style="
-                                           font-family: 'lato';
-                                           font-weight:500;
-                                           letter-spacing: 1px;
-                                           color:#242424;
-                                           text-align: justify;
-                                           ">Haldia Institute of Technology began its journey in the year 1996. It is the first private and accredited academic institution catering technical education in West Bengal. The Institute is situated at Haldia - an industrial hub in Eastern India. Since inception, Haldia Institute of Technology is dedicated to the objectives of creating highly trained professional manpower in various disciplines of Engineering, Technology and Social Science. The Institute is also dedicated to the contribution of higher scientific research in Technology as well as in Applied Science and Social Science.Haldia Institute of Technology began its journey in the year 1996. It is the first private and accredited academic institution catering technical education in West Bengal. The Institute is situated at Haldia - an industrial hub in Eastern India. Since inception, Haldia Institute of Technology is dedicated to the objectives of creating highly trained professional manpower in various disciplines of Engineering,</p><br><br></div>
+                    <p  class="lead" align="left">The annual techno management festival of Haldia Institute of Technology. Celebrating its 17th anniversary, it is getting bigger and better. It boasts of various events ranging from robotics to movie making and from junkyard arts to discussing world politics. Scheduled from 16th to 19th April, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</p>
+                    <h3 style="">Prayukti 2k17</h3>
+                    <p class="lead" align="left">Prayukti 2016 held from 24th to 26th of April 2017 was crafted in such a way so that the students get to learn through enjoying while preparing for the fest. There were 15 events with some of them being quite unique.</p>
+                </div> <!-- twelve -->
+            </div> <!-- row -->   	
 
-                <h3 style="
-                           font-family: 'nexa';
-                           letter-spacing: 1px;
-                           color:#242424;
-                           font-size:24px;
+        </section> <!-- /info -->
 
-                           ">Prayukti 2k18</h3>
-
-                <p align="left" style="
-                                       font-family: 'lato';
-                                       font-weight:500;
-                                       letter-spacing: 1px;
-                                       color:#242424;
-                                       text-align: justify;
-
-                                       ">The annual techno management festival of Haldia Institute of Technology. Celebrating its 17th anniversary, it is getting bigger and better. It boasts of various events ranging from robotics to movie making and from junkyard arts to discussing world politics. Scheduled from 16th to 19th April, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</p>
-                <h3 style="
-                           font-family: 'nexa';
-                           letter-spacing: 1px;
-                           color:#242424;
-                           font-size:24px;
-
-                           ">Prayukti 2k17</h3>
-                <p align="left" style="
-                                       font-family: 'lato';
-                                       font-weight:500;
-                                       letter-spacing: 1px;
-                                       color:#242424;
-                                       text-align: justify;
-                                       ">Prayukti 2016 held from 24th to 26th of April 2017 was crafted in such a way so that the students get to learn through enjoying while preparing for the fest. There were 15 events with some of them being quite unique.</p>
-
-            </div>
-            <!-- twelve -->
-        </div>
-        <!-- row -->
-
-    </section>
-    <!-- /info -->
-
-
-    <!-- CTA Section
+        <!-- CTA Section
 ================================================== -->
-    <section id="cta">
+        <section id="cta">
 
-        <div class="row cta-wrap">
+            <div class="row cta-wrap">
 
-            <div class="col-twelve cta-content">
+                <div class="col-twelve cta-content">  
 
-                <h2 class="h01"><a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Styleshout Recommends Dreamhost.</a></h2>
+                    <h2 class="h01" style=" font-family: Rockwell Extra Bold, Rockwell Bold, monospace;
+                                           font-size: 45px;
+                                           font-style: normal;
+                                           font-variant: normal;
+                                           font-weight: 500;
+                                           line-height: 30.4px;">Events</h2>
+                </div>
+            </div><br>
 
-                <p class="lead">
-                    Looking for an awesome and reliable webhosting? Try <a href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT"><span>DreamHost</span></a>. Get <span>$50 off</span> when you sign up with the promocode <span>styleshout</span>.
-                    <!-- Simply type	the promocode in the box labeled “Promo Code” when placing your order. -->
-                </p>
 
-                <div class="action">
-                    <a class="button large" href="http://www.dreamhost.com/r.cgi?287326|STYLESHOUT">Sign Up Now</a>
+
+
+           
+
+            <div class="row">
+                <div class="col-twelve"></div>
+                <div class="col-four text-center" >
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <img class="img-responsive" src="images/events.jpg"  alt="" style="width: 130%">
+                            </div>
+                            <div class="back">
+                                <div class="back-content">Group quiz event on current affairs</div>
+                                <div class="back-title">1.Wiz-quiz</div>
+                                 <a href="#" class="btn btn-white">View Details</a> 
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-four text-center">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <img class="img-responsive" src="images/events.jpg"  alt="" style="width: 130%">
+                            </div>
+                            <div class="back">
+                                <div class="back-content">Competition of design and implement a circuit</div>
+                                <div class="back-title">2.C@nnect</div>
+                                 <a href="#" class="btn btn-white">View Details</a> 
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-four text-center">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <img class="img-responsive" src="images/events.jpg"  alt="" style="width: 130%">
+                            </div>
+                            <div class="back">
+                                <div class="back-content">"C" language based programming contest</div>
+                                <div class="back-title">3.Code Storm</div>
+                                 <a href="#" class="btn btn-white">View Details</a> 
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-            </div>
+                <div class="col-four text-center">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <img class="img-responsive" src="images/events.jpg"  alt="" style="width: 130%">
+                            </div>
+                            <div class="back">
+                                <div class="back-content">From waste to utility.to make something useful.</div>
+                                <div class="back-title">4.Fun from Junk</div>
+                                 <a href="#" class="btn btn-white">View Details</a> 
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-four text-center">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <img class="img-responsive" src="images/events.jpg"  alt="" style="width: 130%">
+                            </div>
+                            <div class="back">
+                                <div class="back-content">Case investigation and solving event</div>
+                                <div class="back-title">5.Goblet of fire</div>
+                                 <a href="#" class="btn btn-white">View Details</a> 
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        </div>
-        <!-- /cta-content -->
 
-    </section>
-    <!-- /cta -->
+                <div class="col-four text-center">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <img class="img-responsive" src="images/events.jpg"  alt="" style="width: 130%">
+                            </div>
+                           <div class="back">
+                                <div class="back-content">De-Movier:Short Film making contest<br>
+                                                          La Photographe:Photographe Event
+                                </div>
+                                <div class="back-title">6.Frame to Frame</div>
+                                 <a href="#" class="btn btn-white">View Details</a> 
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-four text-center">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <img class="img-responsive" src="images/events.jpg"  alt="" style="width: 130%">
+                            </div>
+                            <div class="back">
+                                <div class="back-content">B-Plan : Explore your business idea<br>
+                                                          D-Constructeur:Construction of limitation souces
+                                                   </div>
+                                <div class="back-title">7.Saudagar</div>
+                                 <a href="#" class="btn btn-white">View Details</a> 
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-four text-center">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <img class="img-responsive" src="images/events.jpg"  alt="" style="width: 130%">
+                            </div>
+                            <div class="back">
+                                <div class="back-content">&#40;a&#41;&nbsp;Trac&mdash;o&mdash;Robot &#40;b&#41;&nbsp;1&mdash;o&mdash;One<br>
+                                
+                                &#40;c&#41;&nbsp;Lakshya &#40;d&#41;&nbsp;Dive Bomber<br>
+                              
+                                </div>
+                                <div class="back-title">8.Yantriki</div>
+                                 <a href="#" class="btn btn-white">View Details</a> 
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-four text-center">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <img class="img-responsive" src="images/events.jpg"  alt="" style="width: 130%">
+                            </div>
+                            <div class="back">
+                                <div class="back-content">&#40;a&#41;&nbsp;Speed Drift &#40;b&#41;&nbsp;Fifa-11<br>
+                                &#40;c&#41;&nbsp;Counter strike &#40;d&#41;&nbsp;8&mdash;Ball Pool<br>
+                                 &#40;e&#41;&nbsp;Paints War &#40;f&#41;&nbsp;8&mdash;Human foosball<br>
+                              
+                                </div>
+                                <div class="back-title">9.Ranbhoomi</div>
+                                 <a href="#" class="btn btn-white">View Details</a> 
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-four text-center">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <img class="img-responsive" src="images/events.jpg"  alt="" style="width: 130%">
+                            </div>
+                            <div class="back">
+                                <div class="back-content">&#40;a&#41;&nbsp;Speed Drift &#40;b&#41;&nbsp;Fifa-11<br>
+                                &#40;c&#41;&nbsp;Counter strike &#40;d&#41;&nbsp;8&mdash;Ball Pool<br>
+                                 &#40;e&#41;&nbsp;Paints War &#40;f&#41;&nbsp;8&mdash;Human foosball<br>
+                              
+                                </div>
+                                <div class="back-title">9.Ranbhoomi</div>
+                                 <a href="#" class="btn btn-white">View Details</a> 
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                       
+                <div class="col-four text-center">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <img class="img-responsive" src="images/events.jpg"  alt="" style="width: 130%">
+                            </div>
+                            <div class="back">
+                                <div class="back-content">Poster Presentation
+                                </div>
+                                <div class="back-title">11.Innovacion</div>
+                                 <a href="#" class="btn btn-white">View Details</a> 
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-four text-center">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <img class="img-responsive" src="images/events.jpg"  alt="" style="width: 130%">
+                            </div>
+                            <div class="back">
+                                <div class="back-content">Model Presentation
+                                </div>
+                                <div class="back-title">12.Pradarshan</div>
+                                 <a href="#" class="btn btn-white">View Details</a> 
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
-    <!-- footer
+
+            </div>   <!-- /cta-content -->
+
+        </section> <!-- /cta --> 
+
+
+
+        <!-- footer
 ================================================== -->
-    <footer>
+        <footer>
 
-        <div class="social-wrap">
-            <div class="row">
+            <div class="social-wrap">
+                <div class="row">
 
-                <ul class="footer-social-list">
-                    <li><a href="#">
+                    <ul class="footer-social-list">
+                        <li><a href="#">
                             <i class="fa fa-facebook"></i><span>Facebook</span>
                             </a></li>
-                    <li><a href="#">
+                        <li><a href="#">
                             <i class="fa fa-twitter"></i><span>Twitter</span>
                             </a></li>
-                    <li><a href="#">
+                        <li><a href="#">
                             <i class="fa fa-pinterest"></i><span>Pinterest</span>
                             </a></li>
-                    <li><a href="#">
+                        <li><a href="#">
                             <i class="fa fa-instagram"></i><span>Instagram</span>
                             </a></li>
-                    <li><a href="#">
+                        <li><a href="#">
                             <i class="fa fa-dribbble"></i><span>Dribbble</span>
                             </a></li>
-                </ul>
+                    </ul>
 
+                </div>
+                <!-- /row -->
             </div>
-            <!-- /row -->
-        </div>
-        <!-- /social-wrap -->
+           
 
-        <div class="footer-bottom">
+           
 
-            <div class="footer-logo">
-                <img src="images/footer-logo.png" alt="">
-            </div>
+        </footer>
 
-            <div class="copyright">
-                <span>© Copyright Prayukti 2018.</span>
-                <span>Design by <a href="http://www.styleshout.com/">Piyush</a></span>
-            </div>
-
-        </div>
-        <!-- /footer-bottom -->
-
-        <div class="back-to-top">
-            <a href="#top" class="smoothscroll"><span>Back to Top</span></a>
+        <div id="preloader">
+            <div id="loader"></div>
         </div>
 
-    </footer>
-
-    <div id="preloader">
-        <div id="loader"></div>
-    </div>
-
-    <!-- Java Script
+        <!-- Java Script
 ================================================== -->
-    <script src="js/jquery-2.1.3.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+        <script src="js/jquery-2.1.3.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
 
-</body>
+    </body>
 
 </html>
